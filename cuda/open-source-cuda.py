@@ -7,7 +7,7 @@ from pyJoules.handler.pandas_handler import PandasHandler
 import argparse
 import datetime
 import pandas as pd
-from pynvml.smi import nvidia_smi
+from pynvml_utils import nvidia_smi
 import psutil
 import os
 import time

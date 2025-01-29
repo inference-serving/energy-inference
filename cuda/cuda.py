@@ -8,7 +8,7 @@ from pyJoules.handler.pandas_handler import PandasHandler
 import argparse
 import datetime
 import pandas as pd
-from pynvml.smi import nvidia_smi
+from pynvml_utils import nvidia_smi
 import os
 import psutil
 import time
@@ -61,10 +61,10 @@ def run_inference(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--num_tokens", type=int, default=256)
+    parser.add_argument("--num_tokens", type=int, default=4)
     parser.add_argument("--hf_name", type=str, default="meta-llama/Llama-2-7b-chat-hf")
     parser.add_argument("--system_name", type=str, default="Swing")
-    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--out_dir", type=str, default=".")
 
     args = parser.parse_args()
